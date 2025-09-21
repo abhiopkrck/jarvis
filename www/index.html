@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JARVIS</title>
+    <link rel="shortcut icon" href="assets/img/abhi.ico" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="assets/wendore/texllate/animate.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Modernizr -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+</head>
+
+<body>
+
+    <section id="Oval" class="mb-4">
+
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="d-flex justify-content-center align-items-center" style="height: 80vh;">
+
+                    <canvas id="canvasOne" width="700" height="420" style="position: absolute;"></canvas>
+
+                    <div id="JarvisHood">
+
+                        <div class="square">
+                            <span class="circle"></span>
+                            <span class="circle"></span>
+                            <span class="circle"></span>
+                        </div>
+
+                    </div>
+
+                </div>
+                <h5 class="text-light text text-center">Ask me anything</h5>
+
+                <div class="col-md-12 mt-4 pt-4">
+                    <div class="text-center">
+                        <div id="TextInput" class="d-flex">
+
+                            <input type="text" class="input-field" name="chatbox" id="chatbox"
+                                placeholder="type here ... ">
+                            <button id="SendBtn" class="glow-on-hover" hidden><i class="bi bi-send"></i></button>
+                            <button id="MicBtn" class="glow-on-hover"><i class="bi bi-mic"></i></button>
+                            <button id="ChatBtn" class="glow-on-hover" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i
+                                    class="bi bi-chat-dots"></i></button>
+                                    
+                            <button id="SettingsBtn" class="glow-on-hover"><i class="bi bi-gear"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+
+    </section>
+
+    <section id="SiriWave" class="mb-4">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+                        <div class="">
+                            <p class="text-start text-light mb-4 siri-message" style="font-size: 28px;">Hello, I am j.a.r.v.i.s</p>
+                            <div id="siri-container"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    </div>
+
+    </div>
+
+    <div class="offcanvas offcanvas-start chat-canvas" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+        id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title text-white" id="offcanvasScrollingLabel">Chats</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div id="chat-canvas-body" class="offcanvas-body">
+
+
+        </div>
+    </div>
+    <!-- Settings Panel -->
+<div id="settingsPanel" class="settings-panel hidden">
+  <h2>⚙️ Settings</h2>
+
+  <label>Voice Rate:</label>
+  <input type="number" id="voiceRate" min="100" max="250" value="174">
+
+  <label>Theme:</label>
+  <select id="themeSelect">
+    <option value="light">🌞 Light</option>
+    <option value="dark">🌙 Dark</option>
+  </select>
+
+  <label>Language:</label>
+  <select id="languageSelect">
+    <option value="en-in">English (India)</option>
+    <option value="en-us">English (US)</option>
+    <option value="hi-in">Hindi</option>
+  </select>
+
+  <button id="saveSettingsBtn">Save</button>
+  <button id="closeSettingsBtn">Close</button>
+</div>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Siri Wave JS -->
+    <script src="https://unpkg.com/siriwave/dist/siriwave.umd.min.js"></script>
+
+    <!-- Textillate & Lettering JS -->
+    <script src="assets/wendore/texllate/jquery.fittext.js"></script>
+    <script src="assets/wendore/texllate/jquery.lettering.js"></script>
+    <script src="http://jschr.github.io/textillate/jquery.textillate.js"></script>
+
+    <!-- Custom Scripts -->
+    
+    <script src="main.js"></script>
+    <script src="/eel.js"></script>
+    <script src="controller.js"></script>
+    <script src="jquery.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
